@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo.QQ.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Demo.QQ.View
         public LoginView()
         {
             InitializeComponent();
+            this.DataContext = new LoginViewModel();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -37,14 +39,20 @@ namespace Demo.QQ.View
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            this.MouseDown += (x, y) =>
-            {
-                if (y.LeftButton == MouseButtonState.Pressed)
-                {
-                    this.DragMove();
-                }
-            };
+            //this.MouseDown += (x, y) =>
+            //{
+            //    if (y.LeftButton == MouseButtonState.Pressed)
+            //    {
+            //        this.DragMove();
+            //    }
+            //};
 
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                this.DragMove();
         }
     }
 }
