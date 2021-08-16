@@ -48,3 +48,4 @@ D:\work\demo.qq\Demo.QQ\Demo.QQ\obj\Debug\Demo.QQ.csproj.GenerateResource.cache
 D:\work\demo.qq\Demo.QQ\Demo.QQ\obj\Debug\Demo.QQ.csproj.CoreCompileInputs.cache
 D:\work\demo.qq\Demo.QQ\Demo.QQ\obj\Debug\Demo.QQ.exe
 D:\work\demo.qq\Demo.QQ\Demo.QQ\obj\Debug\Demo.QQ.pdb
+D:\work\demo.qq\Demo.QQ\Demo.QQ\obj\Debug\Demo.QQ.csproj.AssemblyReference.cache

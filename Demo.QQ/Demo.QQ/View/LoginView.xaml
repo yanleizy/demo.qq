@@ -196,8 +196,8 @@
                Command="{Binding MiniWindowCommand}"  CommandParameter="{Binding ElementName=LoginWindow}"   ></Button>
             <Button VerticalAlignment="Top" Grid.Column="2" Width="40" Height="40" HorizontalAlignment="Right" Template="{StaticResource CloseButtonTemplate}" Name="btnClose" Command="{Binding  CloseWindowCommand}"
                     CommandParameter="{Binding ElementName=LoginWindow}"></Button>
-            <StackPanel Grid.Row="0">
-                <Grid>
+           
+                <Grid  Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -210,7 +210,7 @@
                     </Viewbox>
                     <Label Grid.Column="0" Content="QQ" Margin="30 10 0 4" Foreground="White" FontSize="24"/>
                 </Grid>
-            </StackPanel>
+             
             <StackPanel Grid.Row="0" Grid.RowSpan="2">
                 <Border Margin="0 70 0 0" Background="White" VerticalAlignment="Center"      HorizontalAlignment="Center" CornerRadius="50">
                     <Border.Effect>
