@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo.QQ.View"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
+        Title="MainView"  Height="500" Width="600"  >
     <Grid>
-        
+        <Grid Name="layout" Width="490" Height="210" Background="#19000000">
+            <Grid.Clip>
+                <RectangleGeometry Rect="30,15,430,180"/>
+            </Grid.Clip>
+        </Grid>
     </Grid>
 </Window>

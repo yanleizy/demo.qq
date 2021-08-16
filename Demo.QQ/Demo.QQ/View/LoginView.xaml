@@ -148,6 +148,8 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
+
+       
         <ControlTemplate TargetType="Button" x:Key="LoginButtonTemplate">
             <Border Background="#1FC8FD"  CornerRadius="3" Name="back3">
                 <Grid>
@@ -181,7 +183,15 @@
                 <RowDefinition Height="3*"/>
 
             </Grid.RowDefinitions>
-            <Border Background="#7D72FF" CornerRadius="10,10,0,0"  MouseLeftButtonDown="Border_MouseLeftButtonDown"></Border>
+            <Border CornerRadius="5,5,0,0"  x:Name="border">
+                
+                <Grid    Name="layout"  Background="#7D72FF"  MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                    <Grid.Clip>
+                        <RectangleGeometry RadiusX="{Binding ElementName=border,Path=CornerRadius.TopLeft}" 
+					RadiusY="{Binding ElementName=border,Path=CornerRadius.TopLeft}"  Rect="0,0,440,122"/>
+                    </Grid.Clip> 
+                </Grid>
+            </Border>
             <Button VerticalAlignment="Top" Name="btnMini"  Grid.Column="1" Width="40" Height="40" Margin="0,0,40,0" HorizontalAlignment="Right" Template="{StaticResource MiniButtonTemplate}"
                Command="{Binding MiniWindowCommand}"  CommandParameter="{Binding ElementName=LoginWindow}"   ></Button>
             <Button VerticalAlignment="Top" Grid.Column="2" Width="40" Height="40" HorizontalAlignment="Right" Template="{StaticResource CloseButtonTemplate}" Name="btnClose" Command="{Binding  CloseWindowCommand}"

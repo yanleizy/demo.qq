@@ -16,37 +16,37 @@ namespace Demo.QQ.ViewModel
         public CommandBase LoginCommand { get; set; }
         public LoginViewModel()
         {
-            Action<object> action1 = (o) =>
+            Action<object> CloseWindowaction = (o) =>
             {
                 (o as Window).Close();
             };
-            Func<object, bool> func1 = (o) =>
+            Func<object, bool> CloseWindowfunc = (o) =>
             {
                 return true;
             };
-            CloseWindowCommand = new CommandBase(action1, func1);
+            CloseWindowCommand = new CommandBase(CloseWindowaction, CloseWindowfunc);
 
-            Action<object> action2 = (o) =>
+            Action<object> MiniWindowaction = (o) =>
             {
                 (o as Window).WindowState = WindowState.Minimized;
             };
-            Func<object, bool> func2 = (o) =>
+            Func<object, bool> MiniWindowfunc = (o) =>
             {
                 return true;
             };
-            MiniWindowCommand = new CommandBase(action2, func2);
-            Action<object> action3 = (o) =>
+            MiniWindowCommand = new CommandBase(MiniWindowaction, MiniWindowfunc);
+            Action<object> Loginaction = (o) =>
             {
                 MainView mainView = new MainView();
                 mainView.Show();
                 (o as Window).Close();
 
             };
-            Func<object, bool> func3 = (o) =>
+            Func<object, bool> Loginfunc = (o) =>
             {
                 return true;
             };
-            LoginCommand = new CommandBase(action3, func3);
+            LoginCommand = new CommandBase(Loginaction, Loginfunc);
         }
     }
 }
