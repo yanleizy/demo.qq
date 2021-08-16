@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using Demo.QQ.View;
 namespace Demo.QQ.ViewModel
 {
     public class LoginViewModel
@@ -13,6 +13,7 @@ namespace Demo.QQ.ViewModel
         public CommandBase CloseWindowCommand { get; set; }
         public CommandBase MiniWindowCommand { get; set; }
 
+        public CommandBase LoginCommand { get; set; }
         public LoginViewModel()
         {
             Action<object> action1 = (o) =>
@@ -34,6 +35,18 @@ namespace Demo.QQ.ViewModel
                 return true;
             };
             MiniWindowCommand = new CommandBase(action2, func2);
+            Action<object> action3 = (o) =>
+            {
+                MainView mainView = new MainView();
+                mainView.Show();
+                (o as Window).Close();
+
+            };
+            Func<object, bool> func3 = (o) =>
+            {
+                return true;
+            };
+            LoginCommand = new CommandBase(action3, func3);
         }
     }
 }

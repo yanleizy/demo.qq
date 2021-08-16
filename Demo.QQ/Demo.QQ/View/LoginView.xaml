@@ -149,7 +149,7 @@
             </Style.Triggers>
         </Style>
         <ControlTemplate TargetType="Button" x:Key="LoginButtonTemplate">
-            <Border Background="#1FC8FD" CornerRadius="3" Name="back3">
+            <Border Background="#1FC8FD"  CornerRadius="3" Name="back3">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -171,7 +171,7 @@
             </ControlTemplate.Triggers>
         </ControlTemplate>
     </Window.Resources>
-    <Border Margin="5" Background="White" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
+    <Border Margin="5" Background="White" CornerRadius="10" >
         <Border.Effect>
             <DropShadowEffect Color="Gray" ShadowDepth="0" Opacity="0.3" BlurRadius="5" Direction="0"></DropShadowEffect>
         </Border.Effect>
@@ -181,7 +181,7 @@
                 <RowDefinition Height="3*"/>
 
             </Grid.RowDefinitions>
-            <Border Background="#7D72FF" CornerRadius="10,10,0,0"></Border>
+            <Border Background="#7D72FF" CornerRadius="10,10,0,0"  MouseLeftButtonDown="Border_MouseLeftButtonDown"></Border>
             <Button VerticalAlignment="Top" Name="btnMini"  Grid.Column="1" Width="40" Height="40" Margin="0,0,40,0" HorizontalAlignment="Right" Template="{StaticResource MiniButtonTemplate}"
                Command="{Binding MiniWindowCommand}"  CommandParameter="{Binding ElementName=LoginWindow}"   ></Button>
             <Button VerticalAlignment="Top" Grid.Column="2" Width="40" Height="40" HorizontalAlignment="Right" Template="{StaticResource CloseButtonTemplate}" Name="btnClose" Command="{Binding  CloseWindowCommand}"
@@ -249,8 +249,8 @@
                         <TextBlock VerticalAlignment="Center" Text="找回密码" Foreground="#A6A6A6" Grid.Column="4"/>
                          
                     </Grid>
-                    <Button Name="btnLogin" Template="{StaticResource LoginButtonTemplate}" Height="40" Background="#1FC8FD"  Foreground="White" FontSize="16" Grid.Row="3" Content="安全登录"></Button>
-                    <TextBlock Grid.Row="3"></TextBlock>
+                    <Button Name="btnLogin" Template="{StaticResource LoginButtonTemplate}" Height="40" Background="#1FC8FD"  Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=LoginWindow}" Foreground="White" FontSize="16" Grid.Row="3" Content="安全登录"></Button>
+                    <TextBlock Grid.Row="4"></TextBlock>
                 </Grid>
                 <Label Grid.Column="0" HorizontalAlignment="Center" Foreground="#A6A6A6" VerticalAlignment="Bottom" FontSize="14" Margin="0 0 0 15" Content="注册账号"/>
                 <Border Grid.Column="2">
